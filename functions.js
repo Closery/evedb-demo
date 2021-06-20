@@ -1,4 +1,8 @@
 const puppeteer = require('puppeteer');
+const puppeteer_config = {
+	headless: true,
+	args: ['--no-sandbox', '--disable-setuid-sandbox'],
+};
 
 async function MyAnimeListDetail(id, type) {
 	if (type != 'anime' && type != 'manga') {
@@ -10,7 +14,7 @@ async function MyAnimeListDetail(id, type) {
 		};
 	}
 
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch(puppeteer_config);
 	const page = await browser.newPage();
 
 	// Kaç kişi tarafından oylandı, anime özeti yazıları, karakterler, aktörler, staff
@@ -147,7 +151,7 @@ async function MyAnimeListDetail(id, type) {
 }
 
 async function MyAnimeListSearch(search_text) {
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch(puppeteer_config);
 	const page = await browser.newPage();
 	await page.goto(`https://myanimelist.net/search/all?q=${search_text}&cat=all`, { waitUntil: 'networkidle2' });
 
@@ -218,7 +222,7 @@ async function MyAnimeListSearch(search_text) {
 }
 
 async function IMDBSearch(search_text) {
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch(puppeteer_config);
 	const page = await browser.newPage();
 	await page.goto(`https://www.imdb.com/search/title/?title=${search_text}`, { waitUntil: 'networkidle2' });
 
@@ -265,7 +269,7 @@ async function IMDBDetail(id, type) {
 		};
 	}
 
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch(puppeteer_config);
 	const page = await browser.newPage();
 	const page_response = await page.goto(`https://www.imdb.com/${type}/${id}`, { waitUntil: 'networkidle2' });
 	let statusCode = page_response.status();
