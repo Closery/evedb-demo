@@ -153,6 +153,11 @@ async function MyAnimeListDetail(id, type) {
 async function MyAnimeListSearch(search_text) {
 	const browser = await puppeteer.launch(puppeteer_config);
 	const page = await browser.newPage();
+	await page.setRequestInterception(true);
+	page.on('request', (request) => {
+		if (request.resourceType() === 'image') request.abort();
+		else request.continue();
+	});
 	await page.goto(`https://myanimelist.net/search/all?q=${search_text}&cat=all`, { waitUntil: 'networkidle2' });
 
 	const return_data = await page.evaluate(() => {
