@@ -21,7 +21,9 @@ To achive this I'm gonna need to web scrap data from other web sites like MyAnim
     GET /api/myanimelist/search
 
 **Parameters:**
+
 Search: `?s=search+text`
+
 **Example:** `/api/myanimelist/search?s=Hunter x Hunter`
 
 ---
@@ -31,6 +33,7 @@ Search: `?s=search+text`
     GET /api/myanimelist/detail/:type/:id
 
 **Types:** `anime`, `manga`
+
 **Example:** `/api/myanimelist/detail/anime/136`
 
 ---
@@ -40,7 +43,9 @@ Search: `?s=search+text`
     GET /api/imdb/search
 
 **Parameters:**
+
 Search: `?s=search+text`
+
 **Example:** `/api/imdb/search?s=Godfather`
 
 ---
@@ -50,4 +55,5 @@ Search: `?s=search+text`
     GET /api/imdb/detail/:type/:id
 
 **Types:** `title`
+
 **Example:** `/api/imdb/detail/title/tt0068646`
