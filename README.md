@@ -33,6 +33,8 @@ Search: `?s=search+text`
 **Types:** `anime`, `manga`
 **Example:** `/api/myanimelist/detail/anime/136`
 
+---
+
 **IMDB Search**
 
     GET /api/imdb/search
