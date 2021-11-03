@@ -5,7 +5,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const { GET_MovieFromIMDB, MyAnimeListDetail, MyAnimeListSearch, GIB_VKN_Check, IMDBSearch } = require('./functions');
+const { GET_MovieFromIMDB, MyAnimeListDetail, MyAnimeListSearch, IMDBSearch } = require('./functions');
 
 app.get('/', (req, res) => {
 	res.send('Welcome to MyList API');
@@ -60,19 +60,6 @@ app.get('/api/myanimelist/detail/:type/:id', (req, res) => {
 			res.send(data);
 		}
 	});
-});
-
-app.post('/api/gib/vkn_check', (req, res) => {
-	const { vkn, vergi_dairesi_kodu, sehir_kodu } = req.body;
-	if ((vkn, vergi_dairesi_kodu, sehir_kodu)) {
-		GIB_VKN_Check().then((data) => {
-			res.send(data);
-			res.sendStatus(200);
-		});
-	} else {
-		res.send({ code: 400, message: 'Eksik alanlar var.' });
-		res.sendStatus(400);
-	}
 });
 
 app.listen(port, () => {
