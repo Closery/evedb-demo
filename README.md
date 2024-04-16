@@ -3,7 +3,8 @@
 This repository was created for my hobby project as sort of poc. 
 
 **Live Demo:**  [evedb-demo](https://evedb-demo.herokuapp.com/) 
-(Demo is not working right now since Heroku disabled free tier: [Heroku Pricing](https://www.heroku.com/pricing)
+
+(Demo is not working right now since Heroku disabled free tier: [Heroku Pricing](https://www.heroku.com/pricing))
 
 ## Features
 - MyAnimeList Search
