@@ -1,11 +1,9 @@
 
 # EveDB Project API
-This project was created for my hobby project called EveDB. The purpose is making an application like MyAnimeList but for almost everything like: movies, tv-series, books, games, anime, manga, comics etc.
-
-To achive this I'm gonna need to web scrap data from other web sites like MyAnimeList, IMDB etc.
+This repository was created for my hobby project as sort of poc. 
 
 **Live Demo:**  [evedb-demo](https://evedb-demo.herokuapp.com/) 
-(hosted on free Heroku app, so it may take a while to see the app)
+(Demo is not working right now since Heroku disabled free tier: [Heroku Pricing](https://www.heroku.com/pricing)
 
 ## Features
 - MyAnimeList Search
